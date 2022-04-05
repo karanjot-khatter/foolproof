@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    color: blue;
+
+}
+
+p {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table {
+    margin: 0 auto;
+    font-size: 22px;
+    border: 1px solid black;
+    text-transform: capitalize;
+}
+
+thead td {
+    font-weight: bold;
+}
+
+td {
+    background-color: lightblue;
+    border: 1px solid black;
+    text-align: center;
+    padding:10px;
+}
