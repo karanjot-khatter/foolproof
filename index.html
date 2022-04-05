@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Foolproof technical exercise</title>
+    <link rel="stylesheet" href="styles.css">
     <script>
       const mockData = [
         {
@@ -98,6 +99,28 @@
           }, 1000 * Math.random());
         });
       }
+
+    const getMockDataArray = async () => {
+      const result = await getData();
+      for(var key in result) {
+        let type = result[key].type;
+        let value = result[key].value;
+        let online = result[key].online;
+        let location = result[key].location;
+
+        var tableBody = document.getElementById('table').getElementsByTagName('tbody')[0];
+
+        tableBody.insertRow().innerHTML = 
+        "<td>" + type + "</td>"+
+        "<td>" +value+ "</td>"+
+        "<td>" +online+ "</td>" +
+        "<td>" + location + "</td>";
+
+      }
+    };
+
+    getMockDataArray();
+    
     </script>
   </head>
 
@@ -105,7 +128,7 @@
     <h1>Sensor dashboard</h1>
     <p>The data</p>
 
-    <table>
+    <table id="table">
       <thead>
         <tr>
           <td>type</td>
@@ -115,9 +138,6 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Data goes here...</td>
-        </tr>
       </tbody>
     </table>
   </body>
